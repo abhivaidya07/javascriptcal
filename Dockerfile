@@ -1,7 +1,6 @@
 FROM centos:7
-RUN yum install httpd git -y
+RUN yum -y install httpd php git
 RUN git clone https://github.com/BhaleraoNiranjan/phpcalculator.git
-RUN cp ./javascript/index.html /var/www/html/
+RUN cp ./phpcalculator/index.php /var/www/html/
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
 EXPOSE 80
-
